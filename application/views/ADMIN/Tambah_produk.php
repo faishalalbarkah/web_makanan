@@ -1,0 +1,45 @@
+<div class="box-header with-border">
+              <h3 class="box-title">Tambah Data Makanan</h3>
+            </div>
+            <form action="<?php echo base_url(); ?>AdminMain/simpan_produk" method="post" enctype="multipart/form-data" role="form">
+              <div class="box-body">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Nama Makanan</label>
+                  <input type="text" class="form-control" name="nama_makanan" id="exampleInputtext1" placeholder="Nama Produk"  required="">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Harga Makanan</label>
+                  <input type="text" class="form-control" name="harga_makanan" id="exampleInputtext1" placeholder="Harga makanan"  required="">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Jenis Makanan</label>
+                    <select class="form-control" name="makanan_id">
+                       <option value=''>- Pilih -</option>
+                          <?php foreach ($cetakmakanan as $data) { ?>
+                             <option value="<?php echo $data["makanan_id"] ?> "> <?php echo $data["menu_makanan"]; ?></option>
+                          <?php } ?>
+                        
+                   
+                    </select>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Deskripsi Makanan</label>
+                  <textarea name="deskripsi_makanan" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                  <input class="form-control" type="file" name="image_makanan" id="exampleInputFile" >
+                  <p class="help-block">SILAHKAN UPLOAD GAMBAR MAKANAN </p>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox"> Are you sure to add?
+                  </label>
+                </div>
+              </div>
+              
+              <div class="box-footer">
+                <input type="submit" class="btn btn-primary nilai"  name="submit" value="simpan">
+               
+              </div>
+            </form>
+            
